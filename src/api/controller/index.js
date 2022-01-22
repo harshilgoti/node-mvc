@@ -1,0 +1,1 @@
+exports.AreaController = require("./areaController");

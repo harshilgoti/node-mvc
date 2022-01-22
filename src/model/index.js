@@ -1,0 +1,1 @@
+exports.areaModel = require("./areaModel");
