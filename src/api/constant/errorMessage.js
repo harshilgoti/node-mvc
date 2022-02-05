@@ -78,4 +78,6 @@ exports.SUBCATEGORY_EXISTED = "400 Sub-Category already Existed.";
 exports.TAG_EXISTED = "400 :: Tag already Existed.";
 exports.IS_PAID_INVALID = "400 :: Is paid is invalid.";
 exports.INDEX_INVALID = "400 :: Index is invalid.";
-exports.CONMAN_BUSINESS_NAME_INVALID = "400 :: Conman Business Name is Invalid.";
+exports.CONMAN_BUSINESS_NAME_INVALID =
+  "400 :: Conman Business Name is Invalid.";
+exports.USER_ALREADY_EXISTED = "400 :: User is already is Existed.";

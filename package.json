@@ -14,7 +14,8 @@
     "express-mung": "^0.5.1",
     "joi": "14.3.1",
     "lodash": "^4.17.21",
-    "mongoose": "5.11.15"
+    "mongoose": "5.11.15",
+    "passport": "^0.5.2"
   },
   "devDependencies": {
     "nodemon": "^2.0.15"

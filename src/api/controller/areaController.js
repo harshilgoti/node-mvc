@@ -102,7 +102,6 @@ class areaController {
        * Add area
        **/
       let areaSave = await areaService.create(body);
-      console.log(areaSave, "areaSave");
       return res.json({
         message: AREA_CREATE_SUCCESS,
         data: areaSave,

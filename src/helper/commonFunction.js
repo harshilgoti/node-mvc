@@ -10,8 +10,8 @@ exports.mongoId = function (model) {
     case "area":
       token = `are_${token}`;
       break;
-    case "business":
-      token = `bus_${token}`;
+    case "user":
+      token = `user_${token}`;
       break;
 
     default:

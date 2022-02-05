@@ -1,9 +1,16 @@
 const express = require("express");
 const router = express.Router();
 const areaRoute = require("./areaRoute");
+const userRoute = require("./userRoute");
+const authRoute = require("./authRoute");
 const controller = require("../controller");
 const { validation } = require("../middleware");
-const routes = [...areaRoute.areaRoutes];
+
+const routes = [
+  ...areaRoute.areaRoutes,
+  ...userRoute.userRoutes,
+  ...authRoute.authRoutes,
+];
 
 // Applying routes
 routes.forEach((route) => {

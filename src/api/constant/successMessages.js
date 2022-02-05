@@ -25,9 +25,13 @@ exports.PLACE_DELETE_SUCCESS = "200::Place deleted successfully.";
 exports.TAG_CREATE_SUCCESS = "200::Tag created successfully.";
 exports.TAG_UPDATE_SUCCESS = "200::Tag updated successfully.";
 exports.TAG_DELETE_SUCCESS = "200::Tag deleted successfully.";
-exports.SUB_CATEGORY_TYPE_CREATE_SUCCESS = "200::SubCategoryType created successfully.";
-exports.SUB_CATEGORY_TYPE_UPDATE_SUCCESS = "200::SubCategoryType updated successfully.";
-exports.SUB_CATEGORY_TYPE_DELETE_SUCCESS = "200::SubCategoryType deleted successfully.";
+exports.SUB_CATEGORY_TYPE_CREATE_SUCCESS =
+  "200::SubCategoryType created successfully.";
+exports.SUB_CATEGORY_TYPE_UPDATE_SUCCESS =
+  "200::SubCategoryType updated successfully.";
+exports.SUB_CATEGORY_TYPE_DELETE_SUCCESS =
+  "200::SubCategoryType deleted successfully.";
 exports.SUB_CATEGORY_CREATE_SUCCESS = "200::Sub-Category created successfully.";
 exports.SUB_CATEGORY_UPDATE_SUCCESS = "200::Sub-Category updated successfully.";
 exports.SUB_CATEGORY_DELETE_SUCCESS = "200::Sub-Category deleted successfully.";
+exports.USER_CREATE_SUCCESS = "201::User created successfully.";
