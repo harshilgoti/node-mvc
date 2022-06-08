@@ -2,8 +2,6 @@ const { userService } = require("../../service");
 const { USER_ALREADY_EXISTED } = require("../constant/errorMessage");
 const {
   USER_CREATE_SUCCESS,
-  AREA_UPDATE_SUCCESS,
-  AREA_DELETE_SUCCESS,
 } = require("../constant/successMessages");
 
 class userController {

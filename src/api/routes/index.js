@@ -1,10 +1,11 @@
 const express = require("express");
 const router = express.Router();
+const passport = require("passport");
 const areaRoute = require("./areaRoute");
 const userRoute = require("./userRoute");
 const authRoute = require("./authRoute");
 const controller = require("../controller");
-const { validation } = require("../middleware");
+const { apiAuth, validation } = require("../middleware");
 
 const routes = [
   ...areaRoute.areaRoutes,
@@ -20,6 +21,12 @@ routes.forEach((route) => {
 
     next();
   };
+
+  if (route.authenticate) {
+    middleware.push(apiAuth);
+    middleware.push(passport.authenticate("jwt", { session: false }));
+  }
+
   if (!["get", "delete"].includes(route.method.toLowerCase())) {
     middleware.push(validationMiddleware);
   }

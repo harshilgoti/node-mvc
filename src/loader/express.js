@@ -3,6 +3,8 @@ const cors = require("cors");
 const { router } = require("../api/routes");
 const config = require("../config");
 const responseFormat = require("../api/middleware/responseFormat");
+const passport = require("passport");
+const passportLoader = require("./passport");
 module.exports = (app) => {
   /**
    * Health Check endpoints
@@ -34,6 +36,13 @@ module.exports = (app) => {
 
   // Middleware that transforms the raw string of req.body into json
   app.use(bodyParser.json());
+
+  /**
+   * Set middleware initialize passport
+   */
+  app.use(passport.initialize());
+
+  passportLoader;
 
   // Load API routes
   // console.log(config.api.prefix)
