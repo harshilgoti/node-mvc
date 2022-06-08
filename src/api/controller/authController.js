@@ -1,5 +1,5 @@
 const { userService, tokenService } = require("../../service");
-const User = require("../../model/userModel");
+const passport = require("passport");
 const {
   LOGIN_SUCCESS,
   LOGOUT_SUCCESS,
@@ -15,15 +15,32 @@ class authController {
    * @returns {Promise<*>}
    */
   async login(req, res, next) {
-    try {
-      const user = await User.findUserByCredentials(
-        req.body.email,
-        req.body.password
-      );
-      const token = await user.generateAuthToken();
-    } catch (error) {
-      return next(error);
-    }
+    passport.authenticate("login", function (err, user) {
+      try {
+        if (user) {
+          req.logIn(user, async (err) => {
+            if (err) {
+              return next(LOGIN_FAILED);
+            }
+
+            let token = user.token;
+            let userData = user.user;
+
+            res.send({
+              message: LOGIN_SUCCESS,
+              data: {
+                user: userData,
+                token: token,
+              },
+            });
+          });
+        } else {
+          return next(err);
+        }
+      } catch (error) {
+        return next(error);
+      }
+    })(req, res, next);
   }
 
   /**

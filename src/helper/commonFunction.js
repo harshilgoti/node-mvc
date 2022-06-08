@@ -21,16 +21,3 @@ exports.mongoId = function (model) {
 
   return token;
 };
-
-exports.cryptoPassword = function (password) {
-  let salt = `${Math.round(new Date().valueOf() * Math.random())}`;
-
-  const newPassword = crypto
-    .createHmac("sha1", salt)
-    .update(password)
-    .digest("hex");
-
-  return {
-    password: newPassword,
-  };
-};

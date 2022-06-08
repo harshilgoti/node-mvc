@@ -17,7 +17,7 @@ const response = function (body, req, res) {
     data: body.data || {},
   };
 
-  return res.status(code).send(apiResponse);
+  return apiResponse;
 };
 
 module.exports = mung.json(response);
